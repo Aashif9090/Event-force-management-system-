@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Force Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">⚡ EventForce</div>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#events">Events</a>
+      <a href="#team">Force Team</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">EVENT FORCE MANAGEMENT SYSTEM</p>
+        <h1>Manage your event force with confidence.</h1>
+        <p>Track events, staff deployment, attendance and operational status from one dashboard.</p>
+        <button onclick="scrollToSection('events')">Manage Events</button>
+      </div>
+    </section>
+
+    <section id="dashboard" class="stats">
+      <div class="card"><span>Total Events</span><strong id="eventCount">0</strong></div>
+      <div class="card"><span>Force Members</span><strong id="memberCount">0</strong></div>
+      <div class="card"><span>Available</span><strong id="availableCount">0</strong></div>
+      <div class="card"><span>Active Events</span><strong id="activeCount">0</strong></div>
+    </section>
+
+    <section id="events" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">EVENT OPERATIONS</p>
+          <h2>Event Management</h2>
+        </div>
+        <button onclick="openEventModal()">+ Add Event</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Event</th><th>Date</th><th>Location</th><th>Force</th><th>Status</th><th>Action</th></tr>
+          </thead>
+          <tbody id="eventTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="team" class="panel">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">PERSONNEL</p>
+          <h2>Force Team</h2>
+        </div>
+        <button onclick="openMemberModal()">+ Add Member</button>
+      </div>
+      <div id="teamGrid" class="team-grid"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" onclick="closeModal()">×</button>
+      <h2 id="modalTitle">Add Event</h2>
+      <form id="modalForm"></form>
+    </div>
+  </div>
+
+  <footer>© 2026 EventForce Management System • GitHub Ready</footer>
+  <script src="script.js"></script>
+</body>
+</html>
